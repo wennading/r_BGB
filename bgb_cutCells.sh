@@ -6,7 +6,7 @@
 #SBATCH --job-name=run_R_script   # A more descriptive job name
 #SBATCH --output=/home/dingwenn/BGB/are%j.out
 #SBATCH --error=/home/dingwenn/BGB/are%j.err
-#SBATCH --time=696:24:15
+#SBATCH --time=696:24:15 #the max time
 #SBATCH --mem=30G
 #SBATCH --mail-user=wenna.ding@wsl.ch
 #SBATCH --mail-type=SUBMIT,END,FAIL
