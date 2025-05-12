@@ -1,5 +1,5 @@
 ---
-title: "bgb"
+title: "BGB"
 output: html_document
 date: "2025-05-08"
 ---
@@ -8,22 +8,87 @@ date: "2025-05-08"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
-
+## 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+(1). The Red List status follows specific codes: 
+Regionally extinct (RE=6), 
+Critically endangered (CR=5), 
+Endangered (EN=4), 
+Vulnerable (VU=3), 
+Near threatened (NT=2), 
+Least concern (LC=1),
+Not evaluated (NE=0), 
+Not applicable regionally (NA=0), 
+Data deficient (DD=0), 
+and No assigned status (NULL=0).
 
-```{r cars}
-summary(cars)
+(2). Dispersal distance class	Dispersal distances (m) for 50 and 99% seeds	Dispersal mode
+1	0.1–1	Local nonspecific
+2	1–5	Local nonspecific
+3	2–15	Anemochory
+Myrmecochory	Ants	Herbs, dwarf shrubs, trees
+4	40–150	Anemochory
+Anemochory	Wind	Herbs
+5	10–500	Anemochory
+6	400–1500	Dyszoochory
+Endozoochory	Animals	Any
+Epizoochory	Animals	Any
+7	500–5000	Anthropochory
+references:https://onlinelibrary.wiley.com/doi/full/10.1111/geb.13712
+https://doi.org/10.1038/s41559-023-02287-3
+Transnational conservation to anticipate future plant shifts in Europe
+(3). 
+
+```{r data preparation, include=T}
+#r data preparation
+library(terra)
+library(raster)
+
+land_cover <- rast("/Users/dingwenn/Nutstore Files/mynutshell/0-Research/Projects/1_BGB/data/land_cover_fractions/laco_area_1_25m_square_01.tif")
+land_cover
+## Including embed Plots
+plot(land_cover)
 ```
 
-## Including Plots
+```{r life forms}
+library(dplyr)
+library(stringr)
+df <- read.csv("/Users/dingwenn/Nutstore Files/mynutshell/0-Research/Projects/1_BGB/data/InfoFlora/rawdata/1_Alps_dispersal_v2.csv",head=TRUE)
+df2 <- read.csv("/Users/dingwenn/Nutstore Files/mynutshell/0-Research/Projects/1_BGB/data/InfoFlora/1_dispersal_com.csv",head=TRUE)
+merged_left  <- merge(df2, df, by = "species", all.x = TRUE)
+write.csv(merged_left,"/Users/dingwenn/Nutstore Files/mynutshell/0-Research/Projects/1_BGB/data/InfoFlora/1_dispersal_com_2.csv")
+df <- df %>%
+  mutate(species2 = word(sc_name, 1, 2))
 
-You can also embed plots, for example:
+# define a named vector
+map_vals <- c(
+  LC    = 1,
+  NT    = 2,
+  VU    = 3,
+  EN    = 4,
+  CR    = 5,
+  RE    = 6,
+  "NE"   = 0,
+  "NA"   = 0,    # string "NA"
+  "DD"   = 0,
+  "NULL" = 0     # string "NULL"
+)
+
+# map in one go
+df <- df %>%
+  mutate(
+    # look up each status, then turn any unmapped (or real NA) into 0
+    status_num = coalesce(map_vals[status], 0)
+  )
+
+```
+
+
 
 ```{r pressure, echo=FALSE}
-plot(pressure)
+# echo TRUE display code in output document
+
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
