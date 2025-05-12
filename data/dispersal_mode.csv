@@ -2,11 +2,15 @@
 1,0.1–1,Local nonspecific,Unassisted,"Herbs, dwarf shrubs",<30 cm,Any,No special features
 2,1–5,Local nonspecific,Unassisted,"Herbs, dwarf shrubs, shrubs",>30 cm,Any,No special features
 3,2–15,Anemochory,Wind,"Herbs, dwarf shrubs",Any,Forests,"Wing, hem, pappus, dusty seed"
-Myrmecochory,Ants,"Herbs, dwarf shrubs, trees",Any,Any,Elaiosome,,
+,,Myrmecochory,Ants,"Herbs, dwarf shrubs, trees",Any,Any,Elaiosome
 4,40–150,Anemochory,Wind,"Trees, shrubs",>30 cm,Any,"Wing, hem"
-Anemochory,Wind,Herbs,Any,Open,Tumbleweed,,
+,,Anemochory,Wind,Herbs,Any,Open,Tumbleweed
 5,10–500,Anemochory,Wind,"Herbs, dwarf shrubs",Any,Open,"Pappus, dusty seed"
 6,400–1500,Dyszoochory,Animals,Any,Any,Any,Any
-Endozoochory,Animals,Any,Any,Any,Any,,
-Epizoochory,Animals,Any,Any,Any,Any,,
+,,Endozoochory,Animals,Any,Any,Any,Any
+,,Epizoochory,Animals,Any,Any,Any,Any
 7,500–5000,Anthropochory,Humans,Any,Any,Any,Any
+,,,,,,,
+,,,,,,,
+https://doi.org/10.1111/geb.13712,,,,,,,
+Seed dispersal distance classes and dispersal modes for the European flora,,,,,,,
