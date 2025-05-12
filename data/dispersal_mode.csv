@@ -1,5 +1,4 @@
-﻿TABLE 1. Characteristics of dispersal distance classes.,,,,,,,
-Dispersal distance class,Dispersal distances (m) for 50 and 99% seeds,Dispersal mode,Dispersal vector,Growth form,Plant height,Habitat,Dispersal-related diaspore features
+﻿Dispersal distance class,Dispersal distances (m) for 50 and 99% seeds,Dispersal mode,Dispersal vector,Growth form,Plant height,Habitat,Dispersal-related diaspore features
 1,0.1–1,Local nonspecific,Unassisted,"Herbs, dwarf shrubs",<30 cm,Any,No special features
 2,1–5,Local nonspecific,Unassisted,"Herbs, dwarf shrubs, shrubs",>30 cm,Any,No special features
 3,2–15,Anemochory,Wind,"Herbs, dwarf shrubs",Any,Forests,"Wing, hem, pappus, dusty seed"
@@ -11,5 +10,3 @@ Anemochory,Wind,Herbs,Any,Open,Tumbleweed,,
 Endozoochory,Animals,Any,Any,Any,Any,,
 Epizoochory,Animals,Any,Any,Any,Any,,
 7,500–5000,Anthropochory,Humans,Any,Any,Any,Any
-References:,,,,,,,
-"Lososová, Z., Axmanová, I., Chytrý, M., Midolo, G., Abdulhak, S., Karger, D. N., Renaud, J., Van Es, J., Vittoz, P., & Thuiller, W. (2023). Seed dispersal distance classes and dispersal modes for the European flora. Global Ecology and Biogeography, 32, 1485–1494. https://doi.org/10.1111/geb.13712",,,,,,,
